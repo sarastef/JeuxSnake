@@ -1,0 +1,66 @@
+/* Empty. Add your own CSS if you like */
+
+*{
+	font-size: 2rem;
+}
+.content{
+	background-color: #02111b;
+  	text-align: center;
+}
+
+
+ #canvas {
+ 	
+ 	background-color: #02111b;
+ 	/*border:10px solid gray;
+ 	margin: 50px auto;
+	display: block;
+    background-color: #ddd;
+    */
+ }
+ canvas{
+ 	margin:50px auto;
+ 	width: 70%;
+	box-shadow: 0 14px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   
+  
+  /*border: 1px solid #d9d9d9;*/
+ }
+
+
+
+/*
+.play {
+	position:absolute;
+	top:60%;
+	font-family: "Exo 2", system-ui, sans-serif;
+	 font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-size: 22px;
+  line-height: 68px;
+  text-transform: uppercase;
+  background: #F4157E;
+  color: #F8FAFF;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  min-width: 200px;
+  padding: 0 24px;
+  box-shadow: 0 10px 60px -10px #CD106E;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  user-select:none;
+  transform-style: preserve-3d;
+  transform: perspective(250px) scale3d(1,1,1);
+  transition: all 1s cubic-bezier(0.03,0.98,0.52,0.99);
+  will-change: transform, box-shadow, background;
+  outline: none;
+  z-index:2;
+}
+.play:hover {
+	box-shadow: 0 8px 65px -5px #CD106E;
+	color: #F8FAFF;
+
+}
+*/

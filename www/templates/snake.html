@@ -1,0 +1,31 @@
+<ion-view  hide-nav-bar="true" class="title " title="Snake">
+<ion-content  scroll="false" ng-controller="gameCtrl" >
+
+	<div class="animation-wrapper" id="canvas">
+				  <div class="particle particle-1"></div>
+				  <div class="particle particle-2"></div>
+				  <div class="particle particle-3"></div>
+				  <div class="particle particle-4"></div>
+		<div id="gameContainer">
+	      <h2 class="score">Score: {{score}}</h2>
+	      <h2 class="niveaux">Niveaux: {{niveaux}}</h2>
+
+	      <div id="board">
+	          <div class="row" ng-repeat="column in board">
+	              <div class="column"
+	                  ng-style="{'background-color': colorElements($parent.$index, $index)}"
+	                  ng-repeat="row in column track by $index"
+	              ></div>
+	          </div>
+	      </div>
+	      <div id="startGame"  ng-click="start()"><img src="img/play.svg" alt="Snake start" width="60" ></div>
+
+
+	    </div>
+	</div>
+		
+
+</ion-content>
+          
+</ion-view>
+

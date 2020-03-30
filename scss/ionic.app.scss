@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import "www/lib/ionic/scss/ionic";
+
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+
+
+$col-secondary: #edc405;
+$col-title: #0A3D0A;
+#wrap{
+	margin: 25% auto 10% auto;
+	display: inline-block;
+	
+}
+
+.title{
+	
+	display: inline-block;
+	vertical-align:super;
+	text-align: center;
+    text-transform: uppercase;
+    font-size: 90px;
+    font-weight: 700;
+    font-family: 'Exo 2';
+    line-height: 0.8;
+    color: lighten($col-title, 10%);
+	 text-shadow: 0 -1px 15px #ffeb3b3b, 0 1px 0 #7f6303, 0 3px 0 #FFEB3B, 0 5px 0 #896b03, 0 7px 0 #FF9800, 0 9px 0 #ffeb3bbd, 0 6px 50px rgba(252, 223, 92, 0.19);
+
+
+}
+
+.logo {
+  //position:absolute;
+  //top:50%;
+  margin: 30% auto;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    @include transform(perspective(2.5em) rotateX(15deg) scaleY(0.8));
+    @include transition(all 0.5s);
+
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 800;
+    font-family: 'Exo 2';
+    line-height: 0.8;
+
+    color: lighten($col-secondary, 10%);
+
+    text-shadow: 0 -1px 15px rgba(0,0,0,0.9),
+            0 1px 0 adjust-hue(darken($col-secondary, 22%), -3deg),
+           0 3px 0 adjust-hue(darken($col-secondary, 21%), -3deg),
+           0 5px 0 adjust-hue(darken($col-secondary, 20%), -3deg),
+           0 7px 0 adjust-hue(darken($col-secondary, 19%), -3deg),
+           0 9px 0 adjust-hue(darken($col-secondary, 18%), -3deg),
+          0 6px 50px transparentize(lighten($col-secondary, 20%), 0.2);
+
+    &:first-line {
+      font-size: 0.8em;
+    }
+
+    &:hover {
+      @include transform(perspective(8em) rotateX(11deg) scale(1.2));
+
+      text-shadow: 0 -1px 15px black,
+              0 1px 0 adjust-hue(darken($col-secondary, 22%), -3deg),
+             0 2px 0 adjust-hue(darken($col-secondary, 21%), -3deg),
+             0 0px 0 adjust-hue(darken($col-secondary, 20%), -3deg),
+             0 1px 0 adjust-hue(darken($col-secondary, 19%), -3deg),
+             0 2px 0 adjust-hue(darken($col-secondary, 18%), -3deg),
+            0 2px 30px transparentize(lighten($col-secondary, 20%), 0.4);
+    }
+  }
+}
+/*GAME*/
+.row{
+	width:100%;
+}
+#gameContainer{
+	margin: 50px auto; 
+	display: inline-block;
+	
+}
+#board{
+	box-shadow: 0 14px 20px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.column {
+	
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+}
+
+h2 {
+	  margin-top:0px;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Exo 2';
+    color:#02111b;
+	
+    text-shadow: 0 -1px 15px transparent, 0 1px 0 #f9c820, 0 2px 0 #846703, 0 0px 0 #896b03, 0 1px 0 #FFEB3B, 0 2px 0 #FFEB3B, 0 2px 30px rgba(252, 223, 92, 0.61);
+}
+.niveaux{
+   float: right;
+   margin-top:0px;
+}
+.score{
+   float: left;
+}
+
+
+#startGame {
+	width: 70px;
+	//padding: 10px;
+	margin:10px auto;
+	background-color: $col-secondary;
+	border-radius: 50%;
+
+}
+
+#startGame:hover {
+	//color: red;
+	cursor: pointer;
+}
+@media screen and (max-width: 480px){
+	#gameContainer {
+    width: 100%;
+	}
+}
+
+
+$color-bg: #1e1e1e;
+$color-particle: #fff;
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 600s;
+
+@function particles($max) {
+   $val: 0px 0px $color-particle;
+   @for $i from 1 through $max {
+      $val: #{$val},
+      random($spacing)+px random($spacing)+px $color-particle;
+   }
+   @return $val;
+}
+
+@mixin particles($max) {
+   box-shadow: particles($max);
+}
+
+
+
+.animation-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.particle,
+.particle:after {
+  background: transparent;
+}
+
+.particle:after {
+  position: absolute;
+  content: "";
+  top: $spacing;
+}
+
+.particle-1 {
+  animation: animParticle $time-1 linear infinite;
+  // 600 times random box-shadow coordinates
+  
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-1:after {
+  // 600 times random box-shadow coordinates
+  
+  @include particles(600);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-2 {
+  animation: animParticle $time-2 linear infinite;
+  // 200 times random box-shadow coordinates
+  
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-2:after {
+  // 200 times random box-shadow coordinates
+  
+  @include particles(200);
+  height: 2px;
+  width: 2px;
+}
+
+.particle-3 {
+  animation: animParticle $time-3 linear infinite;
+  // 100 times random box-shadow coordinates
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-3:after {
+  // 100 times random box-shadow coordinates
+  @include particles(100);
+  height: 3px;
+  width: 3px;
+}
+
+.particle-4 {
+  animation: animParticle $time-4 linear infinite;
+  // 400 times random box-shadow coordinates
+  
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+.particle-4:after {
+  // 400 times random box-shadow coordinates
+  
+  @include particles(400);
+  height: 1px;
+  width: 1px;
+}
+
+@keyframes animParticle {
+  from { transform: translateY(0px); }
+  to   { transform: translateY($spacing * -1); }
+}
+
+.page-wrapper {
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
